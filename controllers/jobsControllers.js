@@ -12,3 +12,12 @@ module.exports.addJobs = async (req, res) => {
    return res.status(200).send(jobs)
 }
 
+module.exports.deleteJob = async (req, res) => {
+
+   const _id = req.params.id;
+   const result = await job.deleteOne({ _id });
+   const dt = await job.find({})
+   return res.status(200).send({ message: "deleted !" })
+   
+}
+

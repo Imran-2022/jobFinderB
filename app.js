@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
-const authRoute = require('./routers/authRoute');
+const jobsRoute = require('./routers/jobsRoute');
 
 app.use(express.json());
 app.use(cors());
@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-app.use('/auth', authRoute);
+app.use('/jobs', jobsRoute);
 
 app.get('/', (req, res) => {
     res.send("hellow from dubai 🐸");

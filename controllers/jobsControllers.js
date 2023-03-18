@@ -26,3 +26,12 @@ module.exports.deleteJob = async (req, res) => {
    
 }
 
+
+module.exports.editJob = async (req, res) => {
+   const _id = req.params.id;
+   console.log("_id",_id);
+   const dd=req.body
+   const dt = await job.updateOne({ _id}, dd)
+   return res.status(200).send({id:_id,dd});
+}
+

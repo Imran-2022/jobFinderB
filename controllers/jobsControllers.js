@@ -6,3 +6,9 @@ module.exports.addJob = async (req, res) => {
    return res.status(201).send(result)
 }
 
+
+module.exports.addJobs = async (req, res) => {
+   const jobs = await job.find({})
+   return res.status(200).send(jobs)
+}
+

@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { addJob } = require('../controllers/jobsControllers');
+const { addJob,addJobs } = require('../controllers/jobsControllers');
 
 router.route('/')
     .post(addJob)
+    .get(addJobs)
 
 module.exports = router;

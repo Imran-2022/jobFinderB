@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { addJob,addJobs,deleteJob } = require('../controllers/jobsControllers');
+const { addJob,addJobs,deleteJob,getJob } = require('../controllers/jobsControllers');
 
 router.route('/')
     .post(addJob)
@@ -8,5 +8,6 @@ router.route('/')
 
 router.route('/:id')
     .delete(deleteJob)
+    .get(getJob)
 
 module.exports = router;

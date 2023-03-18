@@ -11,6 +11,11 @@ module.exports.addJobs = async (req, res) => {
    const jobs = await job.find({})
    return res.status(200).send(jobs)
 }
+module.exports.getJob = async (req, res) => {
+   const editId=req.params.id;
+   const singleJob = await job.findOne({_id:editId})
+   return res.status(200).send(singleJob)
+}
 
 module.exports.deleteJob = async (req, res) => {
 
